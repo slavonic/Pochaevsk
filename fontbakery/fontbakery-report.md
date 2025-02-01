@@ -1,6 +1,8 @@
 ## FontBakery report
 
-fontbakery version: 0.12.9
+fontbakery version: 0.13.1
+
+
 
 
 
@@ -12,7 +14,7 @@ These won't break the CI job for now, but will become effective after some time 
 <details><summary>[1] Pochaevsk-Regular.ttf</summary>
 <div>
 <details>
-    <summary>⚠️ <b>WARN</b> Validate size, and resolution of article images, and ensure article page has minimum length and includes visual assets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.article.html#"></a></summary>
+    <summary>💥 <b>ERROR</b> Check base characters have non-zero advance width. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#base-has-width">base_has_width</a></summary>
     <div>
 
 
@@ -21,8 +23,18 @@ These won't break the CI job for now, but will become effective after some time 
 
 
 
-* ⚠️ **WARN** <p>Family metadata at fonts/ttf does not have an article.</p>
- [code: lacks-article]
+* 💥 **ERROR** <p>Failed with AttributeError: 'CheckRunContext' object has no attribute 'get'</p>
+<pre><code>  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/checkrunner.py&quot;, line 222, in _run_check
+    subresults = list(subresults)
+  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/checks/base_has_width.py&quot;, line 46, in check_base_has_width
+    problems = bullet_list(context, problems)
+  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/utils.py&quot;, line 155, in bullet_list
+    return f&quot;{indentation}{bullet} &quot; + pretty_print_list(
+  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/utils.py&quot;, line 140, in pretty_print_list
+    if config.get(&quot;full_lists&quot;):
+
+</code></pre>
+ [code: failed-check]
 
 
 
@@ -41,145 +53,7 @@ These won't break the CI job for now, but will become effective after some time 
 <details><summary>[17] Pochaevsk-Regular.ttf</summary>
 <div>
 <details>
-    <summary>🔥 <b>FAIL</b> Do we have the latest version of FontBakery installed? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.fontbakery.html#"></a></summary>
-    <div>
-
-
-
-
-
-
-
-* 🔥 **FAIL** <p>Current FontBakery version is 0.12.9, while a newer 0.12.10 is already available. Please upgrade it with 'pip install -U fontbakery'</p>
- [code: outdated-fontbakery]
-
-
-
-</div>
-</details>
-
-<details>
-    <summary>🔥 <b>FAIL</b> Shapes languages in all GF glyphsets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.glyphset.html#"></a></summary>
-    <div>
-
-
-
-
-
-
-
-* 🔥 **FAIL** <p>GF_Cyrillic_Core glyphset:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Language</th>
-<th align="left">FAIL messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">uk_Cyrl (Ukrainian)</td>
-<td align="left">Some base glyphs were missing: ʼ, ґ</td>
-</tr>
-<tr>
-<td align="left">^</td>
-<td align="left">Shaper produced a .notdef</td>
-</tr>
-</tbody>
-</table>
- [code: failed-language-shaping]
-
-
-
-* 🔥 **FAIL** <p>GF_Cyrillic_Core glyphset:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Language</th>
-<th align="left">FAIL messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">sr_Cyrl (Serbian)</td>
-<td align="left">Some base glyphs were missing: ђ, љ, њ, ћ, џ</td>
-</tr>
-<tr>
-<td align="left">^</td>
-<td align="left">Shaper produced a .notdef</td>
-</tr>
-</tbody>
-</table>
- [code: failed-language-shaping]
-
-
-
-* 🔥 **FAIL** <p>GF_Cyrillic_Core glyphset:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Language</th>
-<th align="left">FAIL messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">bs_Cyrl (Bosnian (Cyrillic))</td>
-<td align="left">Some base glyphs were missing: Ђ, Љ, Њ, Ћ, Џ, ђ, љ, њ, ћ, џ</td>
-</tr>
-<tr>
-<td align="left">^</td>
-<td align="left">Shaper produced a .notdef</td>
-</tr>
-</tbody>
-</table>
- [code: failed-language-shaping]
-
-
-
-* ⚠️ **WARN** <p>GF_Cyrillic_Core glyphset:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Language</th>
-<th align="left">WARN messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">uk_Cyrl (Ukrainian)</td>
-<td align="left">Some auxiliary glyphs were missing: ʼ, ґ</td>
-</tr>
-</tbody>
-</table>
- [code: warning-language-shaping]
-
-
-
-* ⚠️ **WARN** <p>GF_Cyrillic_Core glyphset:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Language</th>
-<th align="left">WARN messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">sr_Cyrl (Serbian)</td>
-<td align="left">Some auxiliary glyphs were missing: ђ, љ, њ, ћ, џ</td>
-</tr>
-</tbody>
-</table>
- [code: warning-language-shaping]
-
-
-
-</div>
-</details>
-
-<details>
-    <summary>🔥 <b>FAIL</b> Check Google Fonts glyph coverage. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.glyphset.html#"></a></summary>
+    <summary>🔥 <b>FAIL</b> Check Google Fonts glyph coverage. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.html#googlefonts-glyph-coverage">googlefonts/glyph_coverage</a></summary>
     <div>
 
 
@@ -538,7 +412,7 @@ These won't break the CI job for now, but will become effective after some time 
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Check glyphs in mark glyph class are non-spacing. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/opentype.gdef.html#"></a></summary>
+    <summary>🔥 <b>FAIL</b> Check if the vertical metrics of a family are similar to the same family hosted on Google Fonts. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.html#googlefonts-vertical-metrics-regressions">googlefonts/vertical_metrics_regressions</a></summary>
     <div>
 
 
@@ -547,9 +421,13 @@ These won't break the CI job for now, but will become effective after some time 
 
 
 
-* ⚠️ **WARN** <p>The following spacing glyphs may be in the GDEF mark glyph class by mistake:
-acutecomb (U+0301), gravecomb (U+0300), uni0307 (U+0307), uni0308 (U+0308), uni030B (U+030B), uni030F (U+030F), uni0311 (U+0311), uni0483 (U+0483), uni0484 (U+0484), uni0485 (U+0485), uni0486 (U+0486), uni2DE00487 (U+F4E0), uni2DE1 (U+2DE1), uni2DE60487 (U+F4E6), uni2DE70487 (U+F4E7), uni2DEB0487 (U+F4EB), uni2DF00487 (U+F4F0), uni2DF20487 (U+F4F2), uni2DF30487 (U+F4F3), uni2DFD0487 (U+F4FD), uniE000 (U+E000), uniE002 (U+E002) and uniE004 (U+E004)</p>
- [code: spacing-mark-glyphs]
+* 🔥 **FAIL** <p>Pochaevsk Regular: OS/2 sTypoDescender is -400 when it should be -433</p>
+ [code: bad-typo-descender]
+
+
+
+* 🔥 **FAIL** <p>Pochaevsk Regular: hhea Descender is -400 when it should be -433</p>
+ [code: bad-hhea-descender]
 
 
 
@@ -557,7 +435,7 @@ acutecomb (U+0301), gravecomb (U+0300), uni0307 (U+0307), uni0308 (U+0308), uni0
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Check mark characters are in GDEF mark glyph class. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/opentype.gdef.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Check mark characters are in GDEF mark glyph class. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/opentype.html#opentype-gdef-mark-chars">opentype/gdef_mark_chars</a></summary>
     <div>
 
 
@@ -576,7 +454,26 @@ uni0360 (U+0360), uni20DD (U+20DD) and uniA66F (U+A66F)</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Check if each glyph has the recommended amount of contours. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Check glyphs in mark glyph class are non-spacing. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/opentype.html#opentype-gdef-spacing-marks">opentype/gdef_spacing_marks</a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The following glyphs seem to be spacing (because they have width &gt; 0 on the hmtx table) so they may be in the GDEF mark glyph class by mistake, or they should have zero width instead:
+acutecomb (U+0301), gravecomb (U+0300), uni0307 (U+0307), uni0308 (U+0308), uni030B (U+030B), uni030F (U+030F), uni0311 (U+0311), uni0483 (U+0483), uni0484 (U+0484), uni0485 (U+0485), uni0486 (U+0486), uni2DE00487 (U+F4E0), uni2DE1 (U+2DE1), uni2DE60487 (U+F4E6), uni2DE70487 (U+F4E7), uni2DEB0487 (U+F4EB), uni2DF00487 (U+F4F0), uni2DF20487 (U+F4F2), uni2DF30487 (U+F4F3), uni2DFD0487 (U+F4FD), uniE000 (U+E000), uniE002 (U+E002) and uniE004 (U+E004)</p>
+ [code: spacing-mark-glyphs]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Check if each glyph has the recommended amount of contours. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#contour-count">contour_count</a></summary>
     <div>
 
 
@@ -629,7 +526,7 @@ uni0360 (U+0360), uni20DD (U+20DD) and uniA66F (U+A66F)</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Check math signs have the same width. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Check math signs have the same width. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#math-signs-width">math_signs_width</a></summary>
     <div>
 
 
@@ -662,7 +559,29 @@ minus</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Does the font contain a soft hyphen? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.glyphset.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Check there are no overlapping path segments <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#overlapping-path-segments">overlapping_path_segments</a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The following glyphs have overlapping path segments:</p>
+<pre><code>* uniA66F (U+A66F): B&lt;&lt;144.0,663.0&gt;-&lt;144.0,663.0&gt;-&lt;144.0,663.0&gt;&gt; has the same coordinates as a previous segment.
+
+* uniA66F (U+A66F): L&lt;&lt;144.0,663.0&gt;--&lt;144.0,663.0&gt;&gt; has the same coordinates as a previous segment.
+</code></pre>
+ [code: overlapping-path-segments]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Does the font contain a soft hyphen? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#soft-hyphen">soft_hyphen</a></summary>
     <div>
 
 
@@ -680,7 +599,7 @@ minus</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Font has **proper** whitespace glyph names? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.glyphnames.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Ensure Stylistic Sets have description. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#stylisticset-description">stylisticset_description</a></summary>
     <div>
 
 
@@ -689,8 +608,8 @@ minus</p>
 
 
 
-* ⚠️ **WARN** <p>Glyph 0x00A0 is called &quot;nbspace&quot;: Change to &quot;uni00A0&quot;</p>
- [code: not-recommended-00a0]
+* ⚠️ **WARN** <p>The stylistic set ss01 lacks a description string on the 'name' table.</p>
+ [code: missing-description]
 
 
 
@@ -698,7 +617,7 @@ minus</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Do outlines contain any jaggy segments? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/outline.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Validate size, and resolution of article images, and ensure article page has minimum length and includes visual assets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.html#googlefonts-article-images">googlefonts/article/images</a></summary>
     <div>
 
 
@@ -707,28 +626,8 @@ minus</p>
 
 
 
-* ⚠️ **WARN** <p>The following glyphs have jaggy segments:</p>
-<pre><code>* paragraph (U+00B6): L&lt;&lt;41.0,490.0&gt;--&lt;41.0,489.0&gt;&gt;/B&lt;&lt;41.0,489.0&gt;-&lt;43.0,540.0&gt;-&lt;82.0,583.0&gt;&gt; = 2.245742565895049
-
-* u1F312 (U+1F312): B&lt;&lt;468.0,49.0&gt;-&lt;442.0,33.0&gt;-&lt;425.0,33.0&gt;&gt;/B&lt;&lt;425.0,33.0&gt;-&lt;432.0,32.0&gt;-&lt;435.0,32.0&gt;&gt; = 8.13010235415596
-
-* u1F318 (U+1F318): B&lt;&lt;376.5,763.0&gt;-&lt;384.0,766.0&gt;-&lt;393.0,768.0&gt;&gt;/L&lt;&lt;393.0,768.0&gt;--&lt;379.0,768.0&gt;&gt; = 12.528807709151492
-
-* u1F377 (U+1F377): B&lt;&lt;466.5,415.5&gt;-&lt;489.0,424.0&gt;-&lt;507.0,431.0&gt;&gt;/B&lt;&lt;507.0,431.0&gt;-&lt;499.0,430.0&gt;-&lt;487.5,430.0&gt;&gt; = 14.12548915823142
-
-* u1F41F (U+1F41F): B&lt;&lt;516.0,308.0&gt;-&lt;543.0,314.0&gt;-&lt;730.0,332.0&gt;&gt;/B&lt;&lt;730.0,332.0&gt;-&lt;702.0,336.0&gt;-&lt;675.5,337.5&gt;&gt; = 13.62826507913694
-
-* u1F41F (U+1F41F): L&lt;&lt;833.0,445.0&gt;--&lt;914.0,405.0&gt;&gt;/B&lt;&lt;914.0,405.0&gt;-&lt;900.0,416.0&gt;-&lt;900.0,434.0&gt;&gt; = 11.875815566048908
-
-* uni263D (U+263D): B&lt;&lt;114.0,764.0&gt;-&lt;104.0,766.0&gt;-&lt;93.0,767.0&gt;&gt;/B&lt;&lt;93.0,767.0&gt;-&lt;107.0,763.0&gt;-&lt;125.5,749.0&gt;&gt; = 10.750966993188039
-
-* uni263D (U+263D): B&lt;&lt;121.5,28.5&gt;-&lt;110.0,20.0&gt;-&lt;103.0,20.0&gt;&gt;/B&lt;&lt;103.0,20.0&gt;-&lt;110.0,19.0&gt;-&lt;113.0,18.5&gt;&gt; = 8.13010235415596
-
-* uni263E (U+263E): B&lt;&lt;359.5,749.0&gt;-&lt;378.0,763.0&gt;-&lt;392.0,767.0&gt;&gt;/B&lt;&lt;392.0,767.0&gt;-&lt;382.0,766.0&gt;-&lt;372.0,764.0&gt;&gt; = 10.234802763423207
-
-* uni263E (U+263E): B&lt;&lt;372.0,18.5&gt;-&lt;375.0,19.0&gt;-&lt;382.0,20.0&gt;&gt;/B&lt;&lt;382.0,20.0&gt;-&lt;376.0,20.0&gt;-&lt;364.0,28.5&gt;&gt; = 8.13010235415596
-</code></pre>
- [code: found-jaggy-segments]
+* ⚠️ **WARN** <p>Family metadata at fonts/ttf does not have an article.</p>
+ [code: lacks-article]
 
 
 
@@ -736,120 +635,7 @@ minus</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Do outlines contain any semi-vertical or semi-horizontal lines? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/outline.html#"></a></summary>
-    <div>
-
-
-
-
-
-
-
-* ⚠️ **WARN** <p>The following glyphs have semi-vertical/semi-horizontal lines:</p>
-<pre><code>* N (U+004E): L&lt;&lt;556.0,185.0&gt;--&lt;554.0,514.0&gt;&gt;
-
-* Ntilde (U+00D1): L&lt;&lt;556.0,185.0&gt;--&lt;554.0,514.0&gt;&gt;
-
-* T (U+0054): L&lt;&lt;350.0,504.0&gt;--&lt;352.0,124.0&gt;&gt;
-
-* afii10025 (U+0417): L&lt;&lt;90.0,474.0&gt;--&lt;89.0,591.0&gt;&gt;
-
-* afii10043 (U+0429): L&lt;&lt;713.0,607.0&gt;--&lt;712.0,21.0&gt;&gt;
-
-* afii10090 (U+0448): L&lt;&lt;358.0,82.0&gt;--&lt;361.0,451.0&gt;&gt;
-
-* afii10148 (U+0474): L&lt;&lt;211.0,302.0&gt;--&lt;210.0,46.0&gt;&gt;
-
-* bracketleft (U+005B): L&lt;&lt;180.0,-104.0&gt;--&lt;334.0,-103.0&gt;&gt;
-
-* bracketright (U+005D): L&lt;&lt;19.0,-103.0&gt;--&lt;173.0,-104.0&gt;&gt;
-
-* e (U+0065): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
-
-* eacute (U+00E9): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
-
-* ecircumflex (U+00EA): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
-
-* edieresis (U+00EB): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
-
-* egrave (U+00E8): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
-
-* onequarter (U+00BC): L&lt;&lt;216.0,635.0&gt;--&lt;215.0,361.0&gt;&gt;
-
-* uni046C (U+046C): L&lt;&lt;512.0,367.0&gt;--&lt;168.0,369.0&gt;&gt;
-
-* uni046D (U+046D): L&lt;&lt;478.0,263.0&gt;--&lt;168.0,265.0&gt;&gt;
-
-* uni046D (U+046D): L&lt;&lt;532.0,0.0&gt;--&lt;533.0,246.0&gt;&gt;
-
-* uni0476 (U+0476): L&lt;&lt;211.0,302.0&gt;--&lt;210.0,46.0&gt;&gt;
-
-* uni1C85 (U+1C85): L&lt;&lt;361.0,0.0&gt;--&lt;358.0,369.0&gt;&gt;
-
-* uni1C85 (U+1C85): L&lt;&lt;652.0,0.0&gt;--&lt;651.0,128.0&gt;&gt;
-
-* uni1C85 (U+1C85): L&lt;&lt;763.0,353.0&gt;--&lt;764.0,133.0&gt;&gt;
-
-* uniA656 (U+A656): L&lt;&lt;421.0,504.0&gt;--&lt;570.0,505.0&gt;&gt;
-
-* uniA656 (U+A656): L&lt;&lt;570.0,482.0&gt;--&lt;421.0,483.0&gt;&gt;
-
-* uniE5D1 (U+E5D1): L&lt;&lt;172.0,761.0&gt;--&lt;173.0,450.0&gt;&gt;
-
-* uniE5D1 (U+E5D1): L&lt;&lt;173.0,404.0&gt;--&lt;175.0,0.0&gt;&gt;
-
-* uniE5D1 (U+E5D1): L&lt;&lt;690.0,761.0&gt;--&lt;691.0,438.0&gt;&gt;
-
-* uniE5D1 (U+E5D1): L&lt;&lt;691.0,341.0&gt;--&lt;692.0,0.0&gt;&gt;
-</code></pre>
- [code: found-semi-vertical]
-
-
-
-</div>
-</details>
-
-<details>
-    <summary>⚠️ <b>WARN</b> Ensure dotted circle glyph is present and can attach marks. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/shaping.html#"></a></summary>
-    <div>
-
-
-
-
-
-
-
-* ⚠️ **WARN** <p>No dotted circle glyph present</p>
- [code: missing-dotted-circle]
-
-
-
-</div>
-</details>
-
-<details>
-    <summary>⚠️ <b>WARN</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/shaping.html#"></a></summary>
-    <div>
-
-
-
-
-
-
-
-* ⚠️ **WARN** <p>The dot of soft dotted characters used in orthographies <em>must</em> disappear in the following strings: i̋ j̀ j́ j̈ j̑ і́</p>
-<p>The dot of soft dotted characters <em>should</em> disappear in other cases, for example: ĭ i̇ ȉ ȋ i̾ i҃ i҄ i҅ i҆ i҇ iⷠ iⷡ iⷢ iⷣ iⷤ iⷥ iⷦ iⷧ iⷨ iⷩ</p>
-<p>Your font fully covers the following languages that require the soft-dotted feature: Belarusian (Cyrl, 10,064,517 speakers).</p>
-<p>Your font does <em>not</em> cover the following languages that require the soft-dotted feature: Ekpeye (Latn, 226,000 speakers), Bafut (Latn, 158,146 speakers), Dan (Latn, 1,099,244 speakers), Mango (Latn, 77,000 speakers), Mundani (Latn, 34,000 speakers), Vute (Latn, 21,000 speakers), Gulay (Latn, 250,478 speakers), Navajo (Latn, 166,319 speakers), Kom (Latn, 360,685 speakers), South Central Banda (Latn, 244,000 speakers), Igbo (Latn, 27,823,640 speakers), Ebira (Latn, 2,200,000 speakers), Nzakara (Latn, 50,000 speakers), Zapotec (Latn, 490,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Koonzime (Latn, 40,000 speakers), Avokaya (Latn, 100,000 speakers), Yala (Latn, 200,000 speakers), Ma’di (Latn, 584,000 speakers), Cicipu (Latn, 44,000 speakers), Makaa (Latn, 221,000 speakers), Basaa (Latn, 332,940 speakers), Nateni (Latn, 100,000 speakers), Dutch (Latn, 31,709,104 speakers), Sar (Latn, 500,000 speakers), Bete-Bendi (Latn, 100,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Aghem (Latn, 38,843 speakers), Lugbara (Latn, 2,200,000 speakers), Southern Kisi (Latn, 360,000 speakers), Fur (Latn, 1,230,163 speakers), Lithuanian (Latn, 2,357,094 speakers), Mfumte (Latn, 79,000 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Ejagham (Latn, 120,000 speakers), Dii (Latn, 71,000 speakers), Ngbaka (Latn, 1,020,000 speakers).</p>
- [code: soft-dotted]
-
-
-
-</div>
-</details>
-
-<details>
-    <summary>⚠️ <b>WARN</b> Check for codepoints not covered by METADATA subsets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.subsets.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Check for codepoints not covered by METADATA subsets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.html#googlefonts-metadata-unreachable-subsetting">googlefonts/metadata/unreachable_subsetting</a></summary>
     <div>
 
 
@@ -866,27 +652,27 @@ definitions.</p>
 <ul>
 <li>U+007F : try adding symbols</li>
 <li>U+0306 COMBINING BREVE: try adding one of: old-permic, tifinagh</li>
-<li>U+0307 COMBINING DOT ABOVE: try adding one of: malayalam, canadian-aboriginal, tifinagh, coptic, old-permic, tai-le, syriac, math</li>
-<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee</li>
+<li>U+0307 COMBINING DOT ABOVE: try adding one of: canadian-aboriginal, malayalam, math, tifinagh, duployan, old-permic, todhri, coptic, tai-le, syriac, hebrew</li>
+<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage</li>
 <li>U+030F COMBINING DOUBLE GRAVE ACCENT: not included in any glyphset definition</li>
-<li>U+0311 COMBINING INVERTED BREVE: try adding coptic</li>
+<li>U+0311 COMBINING INVERTED BREVE: try adding one of: todhri, coptic</li>
 <li>U+033E COMBINING VERTICAL TILDE: not included in any glyphset definition</li>
 <li>U+0360 COMBINING DOUBLE TILDE: not included in any glyphset definition</li>
-<li>U+10FB GEORGIAN PARAGRAPH SEPARATOR: try adding georgian</li>
-<li>U+2000 EN QUAD: not included in any glyphset definition</li>
-<li>U+2001 EM QUAD: not included in any glyphset definition</li>
+<li>U+10FB GEORGIAN PARAGRAPH SEPARATOR: try adding one of: glagolitic, georgian</li>
+<li>U+2000 EN QUAD: try adding symbols2</li>
+<li>U+2001 EM QUAD: try adding symbols2</li>
 <li>U+2003 EM SPACE: try adding nushu</li>
-<li>U+2004 THREE-PER-EM SPACE: not included in any glyphset definition</li>
-<li>U+2005 FOUR-PER-EM SPACE: not included in any glyphset definition</li>
-<li>U+2006 SIX-PER-EM SPACE: not included in any glyphset definition</li>
-<li>U+2007 FIGURE SPACE: not included in any glyphset definition</li>
-<li>U+2008 PUNCTUATION SPACE: not included in any glyphset definition</li>
-<li>U+200A HAIR SPACE: not included in any glyphset definition</li>
-<li>U+200C ZERO WIDTH NON-JOINER: try adding one of: modi, thaana, kharoshthi, dogra, yi, hanunoo, tai-tham, pahawh-hmong, avestan, balinese, hatran, khudawadi, tagalog, javanese, khmer, siddham, sinhala, meetei-mayek, tirhuta, syriac, warang-citi, syloti-nagri, buginese, bengali, duployan, batak, new-tai-lue, myanmar, mandaic, gunjala-gondi, tifinagh, limbu, gujarati, tamil, devanagari, rejang, kannada, sharada, buhid, newa, kaithi, mongolian, arabic, mahajani, tai-viet, takri, gurmukhi, kayah-li, sundanese, saurashtra, psalter-pahlavi, sogdian, khojki, tagbanwa, grantha, lepcha, malayalam, lao, telugu, bhaiksuki, nko, manichaean, tibetan, chakma, hebrew, masaram-gondi, thai, cham, zanabazar-square, tai-le, phags-pa, hanifi-rohingya, oriya, brahmi</li>
-<li>U+200D ZERO WIDTH JOINER: try adding one of: modi, thaana, kharoshthi, dogra, yi, hanunoo, tai-tham, pahawh-hmong, avestan, balinese, khudawadi, tagalog, javanese, khmer, siddham, sinhala, meetei-mayek, tirhuta, syriac, warang-citi, syloti-nagri, buginese, bengali, duployan, batak, new-tai-lue, myanmar, mandaic, gunjala-gondi, tifinagh, limbu, gujarati, tamil, devanagari, rejang, kannada, sharada, buhid, newa, kaithi, mongolian, arabic, mahajani, tai-viet, takri, gurmukhi, kayah-li, sundanese, old-hungarian, saurashtra, psalter-pahlavi, sogdian, khojki, tagbanwa, grantha, lepcha, malayalam, lao, telugu, bhaiksuki, nko, manichaean, tibetan, chakma, hebrew, masaram-gondi, thai, cham, zanabazar-square, tai-le, phags-pa, hanifi-rohingya, oriya, brahmi</li>
-<li>U+200E LEFT-TO-RIGHT MARK: try adding one of: thaana, nko, arabic, hebrew, phags-pa, syriac</li>
-<li>U+200F RIGHT-TO-LEFT MARK: try adding one of: thaana, nko, hebrew, phags-pa, syriac</li>
-<li>U+2011 NON-BREAKING HYPHEN: try adding one of: yi, syloti-nagri, arabic</li>
+<li>U+2004 THREE-PER-EM SPACE: try adding symbols2</li>
+<li>U+2005 FOUR-PER-EM SPACE: try adding symbols2</li>
+<li>U+2006 SIX-PER-EM SPACE: try adding symbols2</li>
+<li>U+2007 FIGURE SPACE: try adding symbols2</li>
+<li>U+2008 PUNCTUATION SPACE: try adding symbols2</li>
+<li>U+200A HAIR SPACE: try adding symbols2</li>
+<li>U+200C ZERO WIDTH NON-JOINER: try adding one of: pahawh-hmong, bhaiksuki, kayah-li, khudawadi, warang-citi, saurashtra, sinhala, batak, telugu, mandaic, nko, siddham, chakma, thaana, cham, syloti-nagri, khojki, sharada, hebrew, syriac, malayalam, mongolian, bengali, manichaean, brahmi, hatran, meetei-mayek, tagbanwa, masaram-gondi, lao, buhid, limbu, takri, dogra, gujarati, arabic, grantha, tai-le, hanifi-rohingya, buginese, tifinagh, zanabazar-square, kannada, lepcha, sogdian, balinese, duployan, phags-pa, yi, oriya, sundanese, hanunoo, devanagari, mahajani, thai, myanmar, avestan, gurmukhi, modi, new-tai-lue, tai-viet, tirhuta, kharoshthi, tibetan, javanese, khmer, tagalog, gunjala-gondi, tai-tham, newa, tamil, kaithi, rejang, psalter-pahlavi</li>
+<li>U+200D ZERO WIDTH JOINER: try adding one of: pahawh-hmong, bhaiksuki, kayah-li, khudawadi, old-hungarian, saurashtra, warang-citi, sinhala, batak, telugu, mandaic, nko, siddham, chakma, thaana, cham, syloti-nagri, khojki, sharada, hebrew, syriac, malayalam, mongolian, bengali, manichaean, brahmi, meetei-mayek, tagbanwa, masaram-gondi, lao, buhid, limbu, takri, dogra, gujarati, arabic, grantha, tai-le, hanifi-rohingya, buginese, tifinagh, zanabazar-square, kannada, lepcha, sogdian, balinese, duployan, phags-pa, yi, oriya, sundanese, hanunoo, devanagari, mahajani, thai, myanmar, avestan, gurmukhi, modi, new-tai-lue, tai-viet, tirhuta, kharoshthi, tibetan, javanese, khmer, tagalog, gunjala-gondi, tai-tham, newa, tamil, kaithi, rejang, psalter-pahlavi</li>
+<li>U+200E LEFT-TO-RIGHT MARK: try adding one of: phags-pa, nko, thaana, arabic, syriac, hebrew</li>
+<li>U+200F RIGHT-TO-LEFT MARK: try adding one of: phags-pa, nko, thaana, syriac, hebrew</li>
+<li>U+2011 NON-BREAKING HYPHEN: try adding one of: arabic, syloti-nagri, yi</li>
 <li>U+2012 FIGURE DASH: not included in any glyphset definition</li>
 <li>U+2024 ONE DOT LEADER: try adding armenian</li>
 <li>U+2025 TWO DOT LEADER: try adding phags-pa</li>
@@ -898,10 +684,11 @@ definitions.</p>
 <li>U+2058 FOUR DOT PUNCTUATION: try adding coptic</li>
 <li>U+2059 FIVE DOT PUNCTUATION: try adding coptic</li>
 <li>U+205C DOTTED CROSS: not included in any glyphset definition</li>
-<li>U+205D TRICOLON: try adding one of: old-hungarian, meroitic</li>
+<li>U+205D TRICOLON: try adding one of: meroitic, old-hungarian, carian, meroitic-hieroglyphs</li>
 <li>U+205E VERTICAL FOUR DOTS: try adding old-hungarian</li>
+<li>U+2074 SUPERSCRIPT FOUR: try adding math</li>
 <li>U+20DD COMBINING ENCLOSING CIRCLE: try adding symbols</li>
-<li>U+2219 BULLET OPERATOR: try adding one of: yi, tai-tham, math, symbols</li>
+<li>U+2219 BULLET OPERATOR: try adding one of: tai-tham, math, symbols, yi</li>
 <li>U+223B HOMOTHETIC: try adding math</li>
 <li>U+223C TILDE OPERATOR: try adding math</li>
 <li>U+223D REVERSED TILDE: try adding math</li>
@@ -997,7 +784,158 @@ definitions.</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.meta.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Ensure dotted circle glyph is present and can attach marks. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#dotted-circle">dotted_circle</a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>No dotted circle glyph present</p>
+ [code: missing-dotted-circle]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#soft-dotted">soft_dotted</a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The dot of soft dotted characters used in orthographies <em>must</em> disappear in the following strings: i̋ j̀ j́ j̈ j̑ і́</p>
+<p>The dot of soft dotted characters <em>should</em> disappear in other cases, for example: ĭ i̇ ȉ ȋ i̾ i҃ i҄ i҅ i҆ i҇ iⷠ iⷡ iⷢ iⷣ iⷤ iⷥ iⷦ iⷧ iⷨ iⷩ</p>
+<p>Your font fully covers the following languages that require the soft-dotted feature: Belarusian (Cyrl, 10,064,517 speakers).</p>
+<p>Your font does <em>not</em> cover the following languages that require the soft-dotted feature: Ejagham (Latn, 120,000 speakers), Aghem (Latn, 38,843 speakers), Dan (Latn, 1,099,244 speakers), Ebira (Latn, 2,200,000 speakers), Basaa (Latn, 332,940 speakers), Makaa (Latn, 221,000 speakers), Bete-Bendi (Latn, 100,000 speakers), Cicipu (Latn, 44,000 speakers), Lithuanian (Latn, 2,357,094 speakers), Western Krahn (Latn, 97,800 speakers), Yala (Latn, 200,000 speakers), Dii (Latn, 71,000 speakers), Kom (Latn, 360,685 speakers), Kaska (Latn, 125 speakers), Gulay (Latn, 250,478 speakers), Sar (Latn, 500,000 speakers), Fur (Latn, 1,230,163 speakers), Southern Kisi (Latn, 360,000 speakers), Heiltsuk (Latn, 300 speakers), Igbo (Latn, 27,823,640 speakers), Ikwere (Latn, 717,000 speakers), Nzakara (Latn, 50,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Ekpeye (Latn, 226,000 speakers), Abua (Latn, 25,000 speakers), Keliko (Latn, 63,000 speakers), Lugbara (Latn, 2,200,000 speakers), Dutch (Latn, 31,709,104 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Northern Tutchone (Latn, 85 speakers), Southern Tutchone (Latn, 65 speakers), Nateni (Latn, 100,000 speakers), South Central Banda (Latn, 244,000 speakers), Bafut (Latn, 158,146 speakers), Han (Latn, 6 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Mango (Latn, 77,000 speakers), Navajo (Latn, 166,319 speakers), Ma’di (Latn, 584,000 speakers), Vute (Latn, 21,000 speakers), Avokaya (Latn, 100,000 speakers), Ngbaka (Latn, 1,020,000 speakers), Teke-Ebo (Latn, 260,000 speakers), Longto (Latn, 5,000 speakers), Mfumte (Latn, 79,000 speakers), Zapotec (Latn, 490,000 speakers), Koonzime (Latn, 40,000 speakers), Mundani (Latn, 34,000 speakers).</p>
+ [code: soft-dotted]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Do outlines contain any jaggy segments? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#outline-jaggy-segments">outline_jaggy_segments</a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The following glyphs have jaggy segments:</p>
+<pre><code>* paragraph (U+00B6): L&lt;&lt;41.0,490.0&gt;--&lt;41.0,489.0&gt;&gt;/B&lt;&lt;41.0,489.0&gt;-&lt;43.0,540.0&gt;-&lt;82.0,583.0&gt;&gt; = 2.245742565895049
+
+* u1F312 (U+1F312): B&lt;&lt;468.0,49.0&gt;-&lt;442.0,33.0&gt;-&lt;425.0,33.0&gt;&gt;/B&lt;&lt;425.0,33.0&gt;-&lt;432.0,32.0&gt;-&lt;435.0,32.0&gt;&gt; = 8.13010235415596
+
+* u1F318 (U+1F318): B&lt;&lt;376.5,763.0&gt;-&lt;384.0,766.0&gt;-&lt;393.0,768.0&gt;&gt;/L&lt;&lt;393.0,768.0&gt;--&lt;379.0,768.0&gt;&gt; = 12.528807709151492
+
+* u1F377 (U+1F377): B&lt;&lt;466.5,415.5&gt;-&lt;489.0,424.0&gt;-&lt;507.0,431.0&gt;&gt;/B&lt;&lt;507.0,431.0&gt;-&lt;499.0,430.0&gt;-&lt;487.5,430.0&gt;&gt; = 14.12548915823142
+
+* u1F41F (U+1F41F): B&lt;&lt;516.0,308.0&gt;-&lt;543.0,314.0&gt;-&lt;730.0,332.0&gt;&gt;/B&lt;&lt;730.0,332.0&gt;-&lt;702.0,336.0&gt;-&lt;675.5,337.5&gt;&gt; = 13.62826507913694
+
+* u1F41F (U+1F41F): L&lt;&lt;833.0,445.0&gt;--&lt;914.0,405.0&gt;&gt;/B&lt;&lt;914.0,405.0&gt;-&lt;900.0,416.0&gt;-&lt;900.0,434.0&gt;&gt; = 11.875815566048908
+
+* uni263D (U+263D): B&lt;&lt;114.0,764.0&gt;-&lt;104.0,766.0&gt;-&lt;93.0,767.0&gt;&gt;/B&lt;&lt;93.0,767.0&gt;-&lt;107.0,763.0&gt;-&lt;125.5,749.0&gt;&gt; = 10.750966993188039
+
+* uni263D (U+263D): B&lt;&lt;121.5,28.5&gt;-&lt;110.0,20.0&gt;-&lt;103.0,20.0&gt;&gt;/B&lt;&lt;103.0,20.0&gt;-&lt;110.0,19.0&gt;-&lt;113.0,18.5&gt;&gt; = 8.13010235415596
+
+* uni263E (U+263E): B&lt;&lt;359.5,749.0&gt;-&lt;378.0,763.0&gt;-&lt;392.0,767.0&gt;&gt;/B&lt;&lt;392.0,767.0&gt;-&lt;382.0,766.0&gt;-&lt;372.0,764.0&gt;&gt; = 10.234802763423207
+
+* uni263E (U+263E): B&lt;&lt;372.0,18.5&gt;-&lt;375.0,19.0&gt;-&lt;382.0,20.0&gt;&gt;/B&lt;&lt;382.0,20.0&gt;-&lt;376.0,20.0&gt;-&lt;364.0,28.5&gt;&gt; = 8.13010235415596
+</code></pre>
+ [code: found-jaggy-segments]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Do outlines contain any semi-vertical or semi-horizontal lines? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#outline-semi-vertical">outline_semi_vertical</a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The following glyphs have semi-vertical/semi-horizontal lines:</p>
+<pre><code>* N (U+004E): L&lt;&lt;556.0,185.0&gt;--&lt;554.0,514.0&gt;&gt;
+
+* Ntilde (U+00D1): L&lt;&lt;556.0,185.0&gt;--&lt;554.0,514.0&gt;&gt;
+
+* T (U+0054): L&lt;&lt;350.0,504.0&gt;--&lt;352.0,124.0&gt;&gt;
+
+* afii10025 (U+0417): L&lt;&lt;90.0,474.0&gt;--&lt;89.0,591.0&gt;&gt;
+
+* afii10043 (U+0429): L&lt;&lt;713.0,607.0&gt;--&lt;712.0,21.0&gt;&gt;
+
+* afii10090 (U+0448): L&lt;&lt;358.0,82.0&gt;--&lt;361.0,451.0&gt;&gt;
+
+* afii10148 (U+0474): L&lt;&lt;211.0,302.0&gt;--&lt;210.0,46.0&gt;&gt;
+
+* bracketleft (U+005B): L&lt;&lt;180.0,-104.0&gt;--&lt;334.0,-103.0&gt;&gt;
+
+* bracketright (U+005D): L&lt;&lt;19.0,-103.0&gt;--&lt;173.0,-104.0&gt;&gt;
+
+* e (U+0065): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
+
+* eacute (U+00E9): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
+
+* ecircumflex (U+00EA): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
+
+* edieresis (U+00EB): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
+
+* egrave (U+00E8): L&lt;&lt;385.0,256.0&gt;--&lt;119.0,258.0&gt;&gt;
+
+* onequarter (U+00BC): L&lt;&lt;216.0,635.0&gt;--&lt;215.0,361.0&gt;&gt;
+
+* uni046C (U+046C): L&lt;&lt;512.0,367.0&gt;--&lt;168.0,369.0&gt;&gt;
+
+* uni046D (U+046D): L&lt;&lt;478.0,263.0&gt;--&lt;168.0,265.0&gt;&gt;
+
+* uni046D (U+046D): L&lt;&lt;532.0,0.0&gt;--&lt;533.0,246.0&gt;&gt;
+
+* uni0476 (U+0476): L&lt;&lt;211.0,302.0&gt;--&lt;210.0,46.0&gt;&gt;
+
+* uni1C85 (U+1C85): L&lt;&lt;361.0,0.0&gt;--&lt;358.0,369.0&gt;&gt;
+
+* uni1C85 (U+1C85): L&lt;&lt;652.0,0.0&gt;--&lt;651.0,128.0&gt;&gt;
+
+* uni1C85 (U+1C85): L&lt;&lt;763.0,353.0&gt;--&lt;764.0,133.0&gt;&gt;
+
+* uniA656 (U+A656): L&lt;&lt;421.0,504.0&gt;--&lt;570.0,505.0&gt;&gt;
+
+* uniA656 (U+A656): L&lt;&lt;570.0,482.0&gt;--&lt;421.0,483.0&gt;&gt;
+
+* uniE5D1 (U+E5D1): L&lt;&lt;172.0,761.0&gt;--&lt;173.0,450.0&gt;&gt;
+
+* uniE5D1 (U+E5D1): L&lt;&lt;173.0,404.0&gt;--&lt;175.0,0.0&gt;&gt;
+
+* uniE5D1 (U+E5D1): L&lt;&lt;690.0,761.0&gt;--&lt;691.0,438.0&gt;&gt;
+
+* uniE5D1 (U+E5D1): L&lt;&lt;691.0,341.0&gt;--&lt;692.0,0.0&gt;&gt;
+</code></pre>
+ [code: found-semi-vertical]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.html#googlefonts-meta-script-lang-tags">googlefonts/meta/script_lang_tags</a></summary>
     <div>
 
 
@@ -1015,25 +953,7 @@ definitions.</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Ensure Stylistic Sets have description. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.gsub.html#"></a></summary>
-    <div>
-
-
-
-
-
-
-
-* ⚠️ **WARN** <p>The stylistic set ss01 lacks a description string on the 'name' table.</p>
- [code: missing-description]
-
-
-
-</div>
-</details>
-
-<details>
-    <summary>⚠️ <b>WARN</b> Checking OS/2 achVendID. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.os2.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Checking OS/2 achVendID. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.html#googlefonts-vendor-id">googlefonts/vendor_id</a></summary>
     <div>
 
 
@@ -1059,8 +979,8 @@ definitions.</p>
 
 | 💥 ERROR | ☠ FATAL | 🔥 FAIL | ⚠️ WARN | ⏩ SKIP | ℹ️ INFO | ✅ PASS | 🔎 DEBUG | 
 | ---|---|---|---|---|---|---|---|
-| 0 | 0 | 3 | 15 | 119 | 7 | 108 | 0 | 
-| 0% | 0% | 1% | 6% | 47% | 3% | 43% | 0% | 
+| 1 | 0 | 2 | 15 | 107 | 6 | 105 | 0 | 
+| 0% | 0% | 1% | 6% | 45% | 3% | 44% | 0% | 
 
 
 
