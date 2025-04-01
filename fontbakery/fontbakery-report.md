@@ -1,6 +1,6 @@
 ## FontBakery report
 
-fontbakery version: 0.13.1
+fontbakery version: 0.13.2
 
 
 
@@ -14,7 +14,7 @@ These won't break the CI job for now, but will become effective after some time 
 <details><summary>[1] Pochaevsk-Regular.ttf</summary>
 <div>
 <details>
-    <summary>💥 <b>ERROR</b> Check base characters have non-zero advance width. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#base-has-width">base_has_width</a></summary>
+    <summary>🔥 <b>FAIL</b> Check base characters have non-zero advance width. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#base-has-width">base_has_width</a></summary>
     <div>
 
 
@@ -23,18 +23,29 @@ These won't break the CI job for now, but will become effective after some time 
 
 
 
-* 💥 **ERROR** <p>Failed with AttributeError: 'CheckRunContext' object has no attribute 'get'</p>
-<pre><code>  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/checkrunner.py&quot;, line 222, in _run_check
-    subresults = list(subresults)
-  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/checks/base_has_width.py&quot;, line 46, in check_base_has_width
-    problems = bullet_list(context, problems)
-  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/utils.py&quot;, line 155, in bullet_list
-    return f&quot;{indentation}{bullet} &quot; + pretty_print_list(
-  File &quot;/home/runner/work/Pochaevsk/Pochaevsk/venv-test/lib/python3.10/site-packages/fontbakery/utils.py&quot;, line 140, in pretty_print_list
-    if config.get(&quot;full_lists&quot;):
+* 🔥 **FAIL** <p>The following glyphs had zero advance width:
+- uni2DE10487 (U+F4E1)</p>
+<pre><code>- uni2DE20487 (U+F4E2)
 
+- uni2DE90487 (U+F4E9)
+
+- uni2DEA0487 (U+F4EA)
+
+- uni2DEC0487 (U+F4EC)
+
+- uni2DED0487 (U+F4ED)
+
+- uni2DEE0487 (U+F4EE)
+
+- uni2DF10487 (U+F4F1)
+
+- uniE001 (U+E001)
+
+- uniE003 (U+E003)
+
+- uniE005 (U+E005)
 </code></pre>
- [code: failed-check]
+ [code: zero-width-bases]
 
 
 
@@ -50,26 +61,8 @@ These won't break the CI job for now, but will become effective after some time 
 
 
 
-<details><summary>[17] Pochaevsk-Regular.ttf</summary>
+<details><summary>[16] Pochaevsk-Regular.ttf</summary>
 <div>
-<details>
-    <summary>🔥 <b>FAIL</b> Do we have the latest version of FontBakery installed? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#fontbakery-version">fontbakery_version</a></summary>
-    <div>
-
-
-
-
-
-
-
-* 🔥 **FAIL** <p>Current FontBakery version is 0.13.1, while a newer 0.13.2 is already available. Please upgrade it with 'pip install -U fontbakery'</p>
- [code: outdated-fontbakery]
-
-
-
-</div>
-</details>
-
 <details>
     <summary>🔥 <b>FAIL</b> Check Google Fonts glyph coverage. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.html#googlefonts-glyph-coverage">googlefonts/glyph_coverage</a></summary>
     <div>
@@ -543,7 +536,7 @@ greater</p>
 <p>Width = 541:
 logicalnot</p>
 <p>Width = 579:
-divide, plusminus, multiply</p>
+plusminus, divide, multiply</p>
 <p>Width = 352:
 minus</p>
  [code: width-outliers]
@@ -647,10 +640,10 @@ definitions.</p>
 <ul>
 <li>U+007F : try adding symbols</li>
 <li>U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic</li>
-<li>U+0307 COMBINING DOT ABOVE: try adding one of: tai-le, canadian-aboriginal, old-permic, malayalam, syriac, math, hebrew, coptic, duployan, todhri, tifinagh</li>
+<li>U+0307 COMBINING DOT ABOVE: try adding one of: syriac, duployan, old-permic, malayalam, canadian-aboriginal, todhri, math, hebrew, coptic, tai-le, tifinagh</li>
 <li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage</li>
 <li>U+030F COMBINING DOUBLE GRAVE ACCENT: not included in any glyphset definition</li>
-<li>U+0311 COMBINING INVERTED BREVE: try adding one of: todhri, coptic</li>
+<li>U+0311 COMBINING INVERTED BREVE: try adding one of: coptic, todhri</li>
 <li>U+033E COMBINING VERTICAL TILDE: not included in any glyphset definition</li>
 <li>U+0360 COMBINING DOUBLE TILDE: not included in any glyphset definition</li>
 <li>U+10FB GEORGIAN PARAGRAPH SEPARATOR: try adding one of: georgian, glagolitic</li>
@@ -663,11 +656,11 @@ definitions.</p>
 <li>U+2007 FIGURE SPACE: try adding symbols2</li>
 <li>U+2008 PUNCTUATION SPACE: try adding symbols2</li>
 <li>U+200A HAIR SPACE: try adding symbols2</li>
-<li>U+200C ZERO WIDTH NON-JOINER: try adding one of: thai, manichaean, kharoshthi, grantha, tagalog, batak, masaram-gondi, khojki, limbu, mahajani, avestan, myanmar, lepcha, warang-citi, new-tai-lue, psalter-pahlavi, takri, tifinagh, buginese, kayah-li, pahawh-hmong, sharada, phags-pa, tai-viet, sundanese, sogdian, gurmukhi, syriac, bhaiksuki, balinese, javanese, nko, tamil, thaana, tirhuta, zanabazar-square, brahmi, sinhala, buhid, cham, gunjala-gondi, rejang, tai-le, khudawadi, dogra, hanifi-rohingya, lao, hanunoo, bengali, malayalam, gujarati, devanagari, hebrew, tibetan, duployan, modi, syloti-nagri, newa, kannada, chakma, mongolian, saurashtra, telugu, oriya, tai-tham, mandaic, siddham, kaithi, hatran, yi, khmer, tagbanwa, arabic, meetei-mayek</li>
-<li>U+200D ZERO WIDTH JOINER: try adding one of: thai, manichaean, kharoshthi, grantha, tagalog, batak, masaram-gondi, khojki, limbu, mahajani, avestan, myanmar, lepcha, warang-citi, new-tai-lue, psalter-pahlavi, takri, tifinagh, buginese, kayah-li, pahawh-hmong, sharada, phags-pa, old-hungarian, tai-viet, sundanese, sogdian, gurmukhi, syriac, bhaiksuki, balinese, javanese, nko, tamil, thaana, tirhuta, zanabazar-square, brahmi, sinhala, buhid, cham, gunjala-gondi, rejang, tai-le, khudawadi, dogra, hanifi-rohingya, lao, hanunoo, bengali, malayalam, gujarati, devanagari, hebrew, tibetan, duployan, modi, syloti-nagri, newa, kannada, chakma, mongolian, saurashtra, telugu, oriya, tai-tham, mandaic, siddham, kaithi, yi, khmer, tagbanwa, arabic, meetei-mayek</li>
-<li>U+200E LEFT-TO-RIGHT MARK: try adding one of: phags-pa, syriac, thaana, nko, hebrew, arabic</li>
-<li>U+200F RIGHT-TO-LEFT MARK: try adding one of: phags-pa, syriac, thaana, nko, hebrew</li>
-<li>U+2011 NON-BREAKING HYPHEN: try adding one of: arabic, syloti-nagri, yi</li>
+<li>U+200C ZERO WIDTH NON-JOINER: try adding one of: syriac, gurmukhi, syloti-nagri, buginese, dogra, tirhuta, new-tai-lue, masaram-gondi, khudawadi, batak, arabic, hatran, manichaean, pahawh-hmong, brahmi, avestan, phags-pa, mandaic, kannada, tai-le, takri, mongolian, warang-citi, saurashtra, bengali, cham, tamil, buhid, javanese, kharoshthi, zanabazar-square, meetei-mayek, tagbanwa, hebrew, tifinagh, tagalog, tai-viet, myanmar, gujarati, siddham, thaana, kaithi, modi, balinese, malayalam, newa, tibetan, chakma, sogdian, limbu, thai, kayah-li, psalter-pahlavi, khojki, rejang, hanunoo, nko, lao, sinhala, gunjala-gondi, telugu, duployan, sharada, oriya, khmer, bhaiksuki, mahajani, yi, hanifi-rohingya, devanagari, lepcha, tai-tham, grantha, sundanese</li>
+<li>U+200D ZERO WIDTH JOINER: try adding one of: syriac, gurmukhi, syloti-nagri, buginese, dogra, tirhuta, new-tai-lue, masaram-gondi, khudawadi, batak, arabic, manichaean, pahawh-hmong, phags-pa, brahmi, avestan, tai-le, mandaic, kannada, takri, mongolian, warang-citi, saurashtra, bengali, cham, old-hungarian, tamil, buhid, javanese, kharoshthi, zanabazar-square, meetei-mayek, tagbanwa, hebrew, tifinagh, tagalog, tai-viet, myanmar, gujarati, siddham, thaana, kaithi, modi, balinese, malayalam, newa, tibetan, chakma, sogdian, limbu, thai, kayah-li, psalter-pahlavi, khojki, rejang, hanunoo, nko, lao, sinhala, gunjala-gondi, telugu, duployan, sharada, oriya, khmer, bhaiksuki, mahajani, yi, hanifi-rohingya, devanagari, lepcha, tai-tham, grantha, sundanese</li>
+<li>U+200E LEFT-TO-RIGHT MARK: try adding one of: syriac, hebrew, phags-pa, arabic, nko, thaana</li>
+<li>U+200F RIGHT-TO-LEFT MARK: try adding one of: syriac, hebrew, phags-pa, nko, thaana</li>
+<li>U+2011 NON-BREAKING HYPHEN: try adding one of: yi, syloti-nagri, arabic</li>
 <li>U+2012 FIGURE DASH: not included in any glyphset definition</li>
 <li>U+2024 ONE DOT LEADER: try adding armenian</li>
 <li>U+2025 TWO DOT LEADER: try adding phags-pa</li>
@@ -679,11 +672,11 @@ definitions.</p>
 <li>U+2058 FOUR DOT PUNCTUATION: try adding coptic</li>
 <li>U+2059 FIVE DOT PUNCTUATION: try adding coptic</li>
 <li>U+205C DOTTED CROSS: not included in any glyphset definition</li>
-<li>U+205D TRICOLON: try adding one of: meroitic, meroitic-hieroglyphs, old-hungarian, carian</li>
+<li>U+205D TRICOLON: try adding one of: meroitic-hieroglyphs, carian, old-hungarian, meroitic</li>
 <li>U+205E VERTICAL FOUR DOTS: try adding old-hungarian</li>
 <li>U+2074 SUPERSCRIPT FOUR: try adding math</li>
 <li>U+20DD COMBINING ENCLOSING CIRCLE: try adding symbols</li>
-<li>U+2219 BULLET OPERATOR: try adding one of: tai-tham, math, symbols, yi</li>
+<li>U+2219 BULLET OPERATOR: try adding one of: math, yi, tai-tham, symbols</li>
 <li>U+223B HOMOTHETIC: try adding math</li>
 <li>U+223C TILDE OPERATOR: try adding math</li>
 <li>U+223D REVERSED TILDE: try adding math</li>
@@ -808,8 +801,6 @@ definitions.</p>
 
 * ⚠️ **WARN** <p>The dot of soft dotted characters used in orthographies <em>must</em> disappear in the following strings: i̋ j̀ j́ j̈ j̑ і́</p>
 <p>The dot of soft dotted characters <em>should</em> disappear in other cases, for example: ĭ i̇ ȉ ȋ i̾ i҃ i҄ i҅ i҆ i҇ iⷠ iⷡ iⷢ iⷣ iⷤ iⷥ iⷦ iⷧ iⷨ iⷩ</p>
-<p>Your font fully covers the following languages that require the soft-dotted feature: Belarusian (Cyrl, 10,064,517 speakers).</p>
-<p>Your font does <em>not</em> cover the following languages that require the soft-dotted feature: Basaa (Latn, 332,940 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Nzakara (Latn, 50,000 speakers), Sar (Latn, 500,000 speakers), Nateni (Latn, 100,000 speakers), Yala (Latn, 200,000 speakers), Northern Tutchone (Latn, 85 speakers), Abua (Latn, 25,000 speakers), Bete-Bendi (Latn, 100,000 speakers), Ebira (Latn, 2,200,000 speakers), Heiltsuk (Latn, 300 speakers), Keliko (Latn, 63,000 speakers), Ikwere (Latn, 717,000 speakers), Igbo (Latn, 27,823,640 speakers), Dii (Latn, 71,000 speakers), Lithuanian (Latn, 2,357,094 speakers), Han (Latn, 6 speakers), Vute (Latn, 21,000 speakers), Navajo (Latn, 166,319 speakers), Zapotec (Latn, 490,000 speakers), Ma’di (Latn, 584,000 speakers), Lugbara (Latn, 2,200,000 speakers), Fur (Latn, 1,230,163 speakers), Mundani (Latn, 34,000 speakers), Mango (Latn, 77,000 speakers), Koonzime (Latn, 40,000 speakers), Mfumte (Latn, 79,000 speakers), Avokaya (Latn, 100,000 speakers), Western Krahn (Latn, 97,800 speakers), Cicipu (Latn, 44,000 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Southern Tutchone (Latn, 65 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Southern Kisi (Latn, 360,000 speakers), Makaa (Latn, 221,000 speakers), Longto (Latn, 5,000 speakers), Dutch (Latn, 31,709,104 speakers), South Central Banda (Latn, 244,000 speakers), Teke-Ebo (Latn, 260,000 speakers), Bafut (Latn, 158,146 speakers), Kaska (Latn, 125 speakers), Dan (Latn, 1,099,244 speakers), Ngbaka (Latn, 1,020,000 speakers), Ekpeye (Latn, 226,000 speakers), Aghem (Latn, 38,843 speakers), Ejagham (Latn, 120,000 speakers), Kom (Latn, 360,685 speakers), Gulay (Latn, 250,478 speakers).</p>
  [code: soft-dotted]
 
 
@@ -974,7 +965,7 @@ definitions.</p>
 
 | 💥 ERROR | ☠ FATAL | 🔥 FAIL | ⚠️ WARN | ⏩ SKIP | ℹ️ INFO | ✅ PASS | 🔎 DEBUG | 
 | ---|---|---|---|---|---|---|---|
-| 1 | 0 | 2 | 15 | 107 | 6 | 105 | 0 | 
+| 0 | 0 | 2 | 15 | 107 | 7 | 105 | 0 | 
 | 0% | 0% | 1% | 6% | 45% | 3% | 44% | 0% | 
 
 
