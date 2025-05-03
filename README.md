@@ -32,10 +32,8 @@ Version 1.1. This license is available with a FAQ at
 The font source is stored in a FontForge SFD file in the `sources/` directory. All modifications should be made in FontForge, resulting in an updated SFD file. This file is then converted to UFO format by running the convert script. From terminal:
 
 ```
-
 cd your/local/project/directory
 ./convert.sh
-
 ```
 
 The font can then be built using fontmake and gftools by running:
@@ -61,6 +59,8 @@ make images
 The commands `make update` and `make update-project-template` update the repository structure and Python dependencies and should be run periodically.
 
 Google's master repository also had a GitHub workflow for building the fonts in the cloud on push, but this seems to always fail because of incorrect dependencies, so has been disabled. Instead, built binaries are stored on GitHub in the `fonts/` directory.
+
+This font has been added to [Google Fonts](https://fonts.google.com/specimen/Pochaevsk) and is available for use in Google Docs and other cloud-based software.
 
 ## Features
 
